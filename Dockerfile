@@ -1,4 +1,4 @@
-FROM ubuntu:16.10
+FROM ubuntu
 MAINTAINER Nuno Agostinho <nunodanielagostinho@gmail.com>
 
 RUN apt-get update
@@ -13,7 +13,7 @@ ENV PATH="/NGStools/sratoolkit.2.8.2-1-ubuntu64/bin:${PATH}"
 
 # Install parallel-fastq-dump
 COPY get-pip.py .
-RUN apt-get install -y python3
+RUN apt-get install -y python3 python3-distutils
 RUN python3 get-pip.py
 RUN rm get-pip.py
 
